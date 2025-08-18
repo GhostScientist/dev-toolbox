@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { loadTipsData } from '../lib/loadData';
 import type { Tip } from '../lib/schemas';

@@ -1,4 +1,3 @@
-import React from 'react';
 import { Callout } from '../components/Callout';
 
 export function Contribute() {
