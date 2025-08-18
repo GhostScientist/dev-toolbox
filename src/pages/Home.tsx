@@ -97,8 +97,8 @@ export function Home() {
     return (
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="text-center py-12">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-500 mx-auto"></div>
-          <p className="mt-4 text-gray-600 dark:text-gray-400">Loading tools and tips...</p>
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary mx-auto"></div>
+          <p className="mt-4 text-muted-foreground">Loading tools and tips...</p>
         </div>
       </div>
     );
@@ -126,7 +126,7 @@ export function Home() {
       </Callout>
 
       <div className="mb-8">
-        <h1 className="text-3xl font-bold text-gray-900 dark:text-white mb-6 text-center">
+        <h1 className="text-3xl font-bold text-foreground mb-6 text-center">
           Discover Developer Tools & Tips
         </h1>
         
@@ -148,7 +148,7 @@ export function Home() {
             {(searchQuery || selectedCategory || selectedTags.length > 0) && (
               <button
                 onClick={clearFilters}
-                className="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 text-sm font-medium transition-colors"
+                className="text-primary hover:text-primary/80 text-sm font-medium transition-colors"
               >
                 Clear filters
               </button>
@@ -166,12 +166,12 @@ export function Home() {
       <div className="space-y-12">
         <section>
           <div className="flex justify-between items-center mb-6">
-            <h2 className="text-2xl font-semibold text-gray-900 dark:text-white">
+            <h2 className="text-2xl font-semibold text-foreground">
               Featured Tools
             </h2>
             <Link
               to="/tools"
-              className="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 font-medium transition-colors"
+              className="text-primary hover:text-primary/80 font-medium transition-colors"
             >
               View all →
             </Link>
@@ -197,12 +197,12 @@ export function Home() {
 
         <section>
           <div className="flex justify-between items-center mb-6">
-            <h2 className="text-2xl font-semibold text-gray-900 dark:text-white">
+            <h2 className="text-2xl font-semibold text-foreground">
               Latest Tips
             </h2>
             <Link
               to="/tips"
-              className="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 font-medium transition-colors"
+              className="text-primary hover:text-primary/80 font-medium transition-colors"
             >
               View all →
             </Link>

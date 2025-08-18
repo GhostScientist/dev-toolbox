@@ -1,5 +1,9 @@
 import { Link } from 'react-router-dom';
 import type { Tool } from '../lib/schemas';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
+import { ExternalLink } from 'lucide-react';
 
 interface ToolCardProps {
   tool: Tool;
@@ -7,70 +11,69 @@ interface ToolCardProps {
 
 export function ToolCard({ tool }: ToolCardProps) {
   const pricingColors = {
-    'Free': 'bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-200',
-    'Freemium': 'bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-200',
-    'Paid': 'bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-200',
-    'Open Source': 'bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-200',
+    'Free': 'bg-green-500/10 text-green-600 border-green-500/20',
+    'Freemium': 'bg-blue-500/10 text-blue-600 border-blue-500/20',
+    'Paid': 'bg-yellow-500/10 text-yellow-600 border-yellow-500/20',
+    'Open Source': 'bg-purple-500/10 text-purple-600 border-purple-500/20',
   };
 
   return (
-    <div className="bg-white dark:bg-gray-800 rounded-lg shadow-md border border-gray-200 dark:border-gray-700 p-6 hover:shadow-lg transition-shadow">
-      <div className="flex justify-between items-start mb-3">
-        <h3 className="text-lg font-semibold text-gray-900 dark:text-white">
-          <Link 
-            to={`/tools/${tool.id}`}
-            className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
-          >
-            {tool.name}
-          </Link>
-        </h3>
-        <span className={`px-2 py-1 text-xs font-medium rounded-full ${pricingColors[tool.pricing]}`}>
-          {tool.pricing}
-        </span>
-      </div>
-      
-      <div className="mb-3">
-        <span className="inline-block px-2 py-1 text-xs bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded-full">
+    <Card className="hover:shadow-md transition-shadow group">
+      <CardHeader className="pb-3">
+        <div className="flex justify-between items-start">
+          <CardTitle className="text-lg">
+            <Link 
+              to={`/tools/${tool.id}`}
+              className="hover:text-primary transition-colors"
+            >
+              {tool.name}
+            </Link>
+          </CardTitle>
+          <Badge className={pricingColors[tool.pricing]} variant="outline">
+            {tool.pricing}
+          </Badge>
+        </div>
+        <Badge variant="secondary" className="w-fit">
           {tool.category}
-        </span>
-      </div>
+        </Badge>
+      </CardHeader>
       
-      <p className="text-gray-600 dark:text-gray-300 text-sm mb-4 line-clamp-2">
-        {tool.summary}
-      </p>
-      
-      <div className="flex flex-wrap gap-1 mb-4">
-        {tool.tags.slice(0, 3).map((tag) => (
-          <span 
-            key={tag}
-            className="px-2 py-1 text-xs bg-blue-50 dark:bg-blue-900/50 text-blue-600 dark:text-blue-300 rounded"
-          >
-            {tag}
-          </span>
-        ))}
-        {tool.tags.length > 3 && (
-          <span className="px-2 py-1 text-xs text-gray-500 dark:text-gray-400">
-            +{tool.tags.length - 3} more
-          </span>
-        )}
-      </div>
-      
-      <div className="flex justify-between items-center">
-        <a
-          href={tool.website}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 text-sm font-medium transition-colors"
-        >
-          Visit Website →
-        </a>
-        <Link
-          to={`/tools/${tool.id}`}
-          className="text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-300 text-sm transition-colors"
-        >
-          Details
-        </Link>
-      </div>
-    </div>
+      <CardContent className="space-y-4">
+        <p className="text-muted-foreground text-sm line-clamp-2">
+          {tool.summary}
+        </p>
+        
+        <div className="flex flex-wrap gap-1">
+          {tool.tags.slice(0, 3).map((tag) => (
+            <Badge key={tag} variant="outline" className="text-xs">
+              {tag}
+            </Badge>
+          ))}
+          {tool.tags.length > 3 && (
+            <span className="text-xs text-muted-foreground">
+              +{tool.tags.length - 3} more
+            </span>
+          )}
+        </div>
+        
+        <div className="flex justify-between items-center pt-2">
+          <Button asChild variant="link" size="sm" className="p-0 h-auto">
+            <a
+              href={tool.website}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <ExternalLink className="w-3 h-3 mr-1" />
+              Visit Website
+            </a>
+          </Button>
+          <Button asChild variant="ghost" size="sm">
+            <Link to={`/tools/${tool.id}`}>
+              Details
+            </Link>
+          </Button>
+        </div>
+      </CardContent>
+    </Card>
   );
 }

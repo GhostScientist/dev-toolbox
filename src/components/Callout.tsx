@@ -1,4 +1,5 @@
 import React from 'react';
+import { cn } from '@/lib/utils';
 
 interface CalloutProps {
   children: React.ReactNode;
@@ -7,15 +8,18 @@ interface CalloutProps {
 }
 
 export function Callout({ children, type = 'info', className = '' }: CalloutProps) {
-  const baseClasses = 'p-4 rounded-lg border-l-4 mb-6';
   const typeClasses = {
-    info: 'bg-blue-50 border-blue-400 text-blue-800',
-    warning: 'bg-yellow-50 border-yellow-400 text-yellow-800',
-    success: 'bg-green-50 border-green-400 text-green-800',
+    info: 'bg-blue-500/5 border-blue-500/20 text-blue-700 dark:text-blue-300',
+    warning: 'bg-yellow-500/5 border-yellow-500/20 text-yellow-700 dark:text-yellow-300',
+    success: 'bg-green-500/5 border-green-500/20 text-green-700 dark:text-green-300',
   };
 
   return (
-    <div className={`${baseClasses} ${typeClasses[type]} ${className}`}>
+    <div className={cn(
+      'p-4 rounded-lg border-l-4 mb-6',
+      typeClasses[type],
+      className
+    )}>
       {children}
     </div>
   );
