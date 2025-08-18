@@ -1,0 +1,95 @@
+name: 🚀 Improve the Site
+description: Suggest improvements to the dev-toolbox website or functionality
+title: "[IMPROVEMENT]: "
+labels: ["enhancement", "site-improvement"]
+assignees: []
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping improve Dev Toolbox! Whether it's a bug fix, new feature, or UX improvement, we'd love to hear your ideas.
+
+  - type: dropdown
+    id: improvement-type
+    attributes:
+      label: Type of Improvement
+      description: What kind of improvement is this?
+      options:
+        - Bug Fix
+        - New Feature
+        - Performance
+        - Accessibility
+        - UI/UX Enhancement
+        - Documentation
+        - Developer Experience
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: current-behavior
+    attributes:
+      label: Current Behavior
+      description: What currently happens (if applicable)?
+      placeholder: Describe the current state or behavior
+
+  - type: textarea
+    id: desired-behavior
+    attributes:
+      label: Desired Behavior
+      description: What should happen instead?
+      placeholder: Describe what you'd like to see
+    validations:
+      required: true
+
+  - type: textarea
+    id: use-case
+    attributes:
+      label: Use Case
+      description: Why would this improvement be valuable?
+      placeholder: Explain the problem this solves or the value it adds
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposed-solution
+    attributes:
+      label: Proposed Solution (Optional)
+      description: Do you have ideas on how to implement this?
+      placeholder: Share any technical ideas or approaches
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives Considered (Optional)
+      description: What other approaches have you considered?
+      placeholder: List any alternative solutions you've thought about
+
+  - type: dropdown
+    id: complexity
+    attributes:
+      label: Estimated Complexity
+      description: How complex do you think this would be to implement?
+      options:
+        - Low - Simple change
+        - Medium - Moderate effort
+        - High - Significant work
+        - Unknown
+
+  - type: checkboxes
+    id: volunteer
+    attributes:
+      label: Contribution
+      description: Are you interested in helping implement this?
+      options:
+        - label: I'd like to work on implementing this improvement
+        - label: I can help with testing or reviewing
+        - label: I can provide additional feedback during development
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional Context
+      description: Anything else we should know?
+      placeholder: Screenshots, examples, related issues, etc.

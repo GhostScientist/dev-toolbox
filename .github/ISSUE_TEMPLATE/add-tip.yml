@@ -1,0 +1,106 @@
+name: 💡 Share a Developer Tip
+description: Share a useful tip, trick, or best practice with the community
+title: "Add tip: [TIP TITLE]"
+labels: ["enhancement", "tip-suggestion"]
+assignees: []
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for sharing your knowledge! Please fill out the information below to help us add your tip to the directory.
+        
+        **Before submitting:**
+        - Search existing tips to make sure it hasn't been shared already
+        - Make sure the tip is practical and includes clear examples
+        - Provide complete information with working code examples
+
+  - type: input
+    id: tip-title
+    attributes:
+      label: Tip Title
+      description: A clear, descriptive title for your tip
+      placeholder: e.g., "Writing Readable Git Commits"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: category
+    attributes:
+      label: Category
+      description: Which category best describes this tip?
+      options:
+        - AI
+        - Backend
+        - Build
+        - CLI
+        - Cloud
+        - Collab
+        - Data
+        - DevEx
+        - Frontend
+        - Infra
+        - Mobile
+        - Observability
+        - Performance
+        - Security
+        - Testing
+        - UX
+    validations:
+      required: true
+
+  - type: input
+    id: tags
+    attributes:
+      label: Tags
+      description: Comma-separated list of relevant tags
+      placeholder: e.g., "git, commits, best-practices, teamwork"
+    validations:
+      required: true
+
+  - type: textarea
+    id: summary
+    attributes:
+      label: Summary (Optional)
+      description: Brief summary of the tip (max 200 characters)
+      placeholder: A one-line description of what this tip covers
+
+  - type: textarea
+    id: content
+    attributes:
+      label: Tip Content
+      description: The full tip in Markdown format
+      placeholder: |
+        Write your tip here using Markdown. Include:
+        - Clear explanations
+        - Code examples
+        - Step-by-step instructions
+        - Practical examples
+        - Pro tips or advanced techniques
+      render: markdown
+    validations:
+      required: true
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional Context (Optional)
+      description: Any additional information that might be helpful
+      placeholder: Tools needed, prerequisites, related tips, etc.
+
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Verification
+      description: Please confirm the following
+      options:
+        - label: I have searched existing tips and this is not a duplicate
+          required: true
+        - label: The tip includes clear, practical examples
+          required: true
+        - label: I have tested any code examples provided
+          required: true
+        - label: The content is my own or properly attributed
+          required: true
+        - label: I understand this will be reviewed before being added
+          required: true

@@ -1,0 +1,17 @@
+{
+  "id": "astro",
+  "name": "Astro",
+  "website": "https://astro.build",
+  "category": "Frontend",
+  "tags": ["static-site-generator", "javascript", "typescript", "performance"],
+  "summary": "Modern static site generator with component islands architecture for optimal performance",
+  "why": "Astro delivers the fastest websites by shipping zero JavaScript by default and only hydrating components when needed. Perfect for content-heavy sites that need great performance.",
+  "pricing": "Open Source",
+  "getting_started": "Run `npm create astro@latest` to create a new project. Choose from templates or start blank. Astro supports React, Vue, Svelte, and more.",
+  "added_by": {
+    "name": "dev-toolbox",
+    "date": "2024-01-01"
+  },
+  "github": "https://github.com/withastro/astro",
+  "docs": "https://docs.astro.build"
+}

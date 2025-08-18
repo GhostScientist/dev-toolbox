@@ -1,0 +1,17 @@
+{
+  "id": "react",
+  "name": "React",
+  "website": "https://react.dev",
+  "category": "Frontend",
+  "tags": ["javascript", "typescript", "ui-library", "component-based"],
+  "summary": "Popular JavaScript library for building user interfaces with a component-based architecture",
+  "why": "React's declarative approach and huge ecosystem make it ideal for building complex, interactive user interfaces. Great community support and job market demand.",
+  "pricing": "Open Source",
+  "getting_started": "Use `npx create-react-app my-app` or Vite with `npm create vite@latest my-app -- --template react`. Start with functional components and hooks.",
+  "added_by": {
+    "name": "dev-toolbox",
+    "date": "2024-01-01"
+  },
+  "github": "https://github.com/facebook/react",
+  "docs": "https://react.dev/learn"
+}
