@@ -5,7 +5,7 @@ category: DevEx
 tags: ["git", "commits", "best-practices", "teamwork"]
 added_by:
   name: dev-toolbox
-  date: 2024-01-01
+  date: "2024-01-01"
 summary: Learn how to write clear, meaningful commit messages that help your team understand changes
 ---
 
