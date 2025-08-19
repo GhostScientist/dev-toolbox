@@ -1,4 +1,11 @@
 import categories from '../data/categories.json';
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from '@/components/ui/select';
 
 interface CategorySelectProps {
   value: string;
@@ -7,21 +14,27 @@ interface CategorySelectProps {
 }
 
 export function CategorySelect({ value, onChange, className = '' }: CategorySelectProps) {
+  const handleValueChange = (selectedValue: string) => {
+    // Convert "all" back to empty string for the parent component
+    onChange(selectedValue === "all" ? "" : selectedValue);
+  };
+
+  // Convert empty string to "all" for the Select component
+  const selectValue = value === "" ? "all" : value;
+
   return (
-    <select
-      value={value}
-      onChange={(e) => onChange(e.target.value)}
-      className={`px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg 
-                 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100
-                 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500
-                 transition-colors ${className}`}
-    >
-      <option value="">All Categories</option>
-      {categories.map((category) => (
-        <option key={category} value={category}>
-          {category}
-        </option>
-      ))}
-    </select>
+    <Select value={selectValue} onValueChange={handleValueChange}>
+      <SelectTrigger className={`w-full sm:w-48 ${className}`}>
+        <SelectValue placeholder="All Categories" />
+      </SelectTrigger>
+      <SelectContent>
+        <SelectItem value="all">All Categories</SelectItem>
+        {categories.map((category) => (
+          <SelectItem key={category} value={category}>
+            {category}
+          </SelectItem>
+        ))}
+      </SelectContent>
+    </Select>
   );
 }

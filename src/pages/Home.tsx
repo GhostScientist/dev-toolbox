@@ -7,6 +7,9 @@ import { TagFilter } from '../components/TagFilter';
 import { ToolCard } from '../components/ToolCard';
 import { TipCard } from '../components/TipCard';
 import { EmptyState } from '../components/EmptyState';
+import { SkeletonGrid } from '../components/SkeletonCard';
+import { Skeleton } from '@/components/ui/skeleton';
+import { Button } from '@/components/ui/button';
 import { loadAllData } from '../lib/loadData';
 import { createToolSearch, createTipSearch } from '../lib/fuse';
 import type { Tool, Tip } from '../lib/schemas';
@@ -96,9 +99,47 @@ export function Home() {
   if (loading) {
     return (
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <div className="text-center py-12">
-          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary mx-auto"></div>
-          <p className="mt-4 text-muted-foreground">Loading tools and tips...</p>
+        <div className="mb-8">
+          <div className="bg-blue-500/5 border-l-4 border-blue-500/20 text-blue-700 dark:text-blue-300 p-4 rounded-lg mb-6">
+            <div className="text-center space-y-2">
+              <Skeleton className="h-6 w-80 mx-auto" />
+              <Skeleton className="h-4 w-96 mx-auto" />
+              <Skeleton className="h-4 w-72 mx-auto" />
+            </div>
+          </div>
+        </div>
+        
+        <div className="mb-8">
+          <Skeleton className="h-8 w-80 mx-auto mb-6" />
+          <div className="space-y-6">
+            <Skeleton className="h-10 w-full" />
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Skeleton className="h-10 w-full sm:w-48" />
+            </div>
+            <div className="flex flex-wrap gap-2">
+              {Array.from({ length: 6 }).map((_, i) => (
+                <Skeleton key={i} className="h-6 w-16 rounded-full" />
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <div className="space-y-12">
+          <section>
+            <div className="flex justify-between items-center mb-6">
+              <Skeleton className="h-7 w-40" />
+              <Skeleton className="h-5 w-20" />
+            </div>
+            <SkeletonGrid count={6} />
+          </section>
+
+          <section>
+            <div className="flex justify-between items-center mb-6">
+              <Skeleton className="h-7 w-32" />
+              <Skeleton className="h-5 w-20" />
+            </div>
+            <SkeletonGrid count={3} />
+          </section>
         </div>
       </div>
     );
@@ -112,7 +153,9 @@ export function Home() {
           <p className="mb-2">
             You may have come from the blog post{' '}
             <a 
-              href="#" 
+              href="https://www.dakota.codes/blog/shipping-your-first-feature" 
+              target="_blank"
+              rel="noopener noreferrer"
               className="font-medium underline hover:no-underline"
             >
               Shipping your first feature with Claude Code
@@ -146,12 +189,14 @@ export function Home() {
             />
             
             {(searchQuery || selectedCategory || selectedTags.length > 0) && (
-              <button
+              <Button
                 onClick={clearFilters}
-                className="text-primary hover:text-primary/80 text-sm font-medium transition-colors"
+                variant="ghost"
+                size="sm"
+                className="text-primary hover:text-primary/80 font-medium transition-all duration-200 hover:scale-105"
               >
                 Clear filters
-              </button>
+              </Button>
             )}
           </div>
           

@@ -1,3 +1,6 @@
+import { Button } from '@/components/ui/button';
+import { cn } from '@/lib/utils';
+
 interface TagFilterProps {
   tags: string[];
   selectedTags: string[];
@@ -9,23 +12,28 @@ export function TagFilter({ tags, selectedTags, onTagToggle, className = '' }: T
   if (tags.length === 0) return null;
 
   return (
-    <div className={`${className}`}>
-      <h3 className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-3">Filter by tags:</h3>
+    <div className={cn('space-y-3', className)}>
+      <h3 className="text-sm font-medium text-muted-foreground">Filter by tags:</h3>
       <div className="flex flex-wrap gap-2">
         {tags.map((tag) => {
           const isSelected = selectedTags.includes(tag);
           return (
-            <button
+            <Button
               key={tag}
+              variant={isSelected ? 'default' : 'outline'}
+              size="sm"
               onClick={() => onTagToggle(tag)}
-              className={`px-3 py-1 text-sm rounded-full transition-colors ${
-                isSelected
-                  ? 'bg-blue-500 text-white'
-                  : 'bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-600'
-              }`}
+              className={cn(
+                'h-7 text-xs transition-all duration-200',
+                isSelected && 'shadow-md scale-105',
+                !isSelected && 'hover:scale-105 hover:shadow-sm'
+              )}
             >
               {tag}
-            </button>
+              {isSelected && (
+                <span className="ml-1 text-xs opacity-70">✓</span>
+              )}
+            </Button>
           );
         })}
       </div>

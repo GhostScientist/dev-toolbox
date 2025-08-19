@@ -1,3 +1,10 @@
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
+
 export function Footer() {
   return (
     <footer className="bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700 mt-12">
@@ -59,9 +66,20 @@ export function Footer() {
         </div>
         
         <div className="mt-8 pt-8 border-t border-gray-200 dark:border-gray-700 text-center">
-          <p className="text-gray-600 dark:text-gray-400 text-sm">
-            Made with ❤️ by the developer community. Open source and always free.
-          </p>
+          <TooltipProvider>
+            <p className="text-gray-600 dark:text-gray-400 text-sm">
+              Made with ❤️ by you, me, and the rest of{" "}
+              <Tooltip>
+                <TooltipTrigger className="underline decoration-dotted cursor-help">
+                  The We
+                </TooltipTrigger>
+                <TooltipContent>
+                  <p>Anyone who contributes.</p>
+                </TooltipContent>
+              </Tooltip>
+              . Open source and always free.
+            </p>
+          </TooltipProvider>
         </div>
       </div>
     </footer>

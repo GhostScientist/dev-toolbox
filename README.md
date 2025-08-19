@@ -153,6 +153,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ---
 
-**Made with ❤️ by the developer community**
+**Made with ❤️ by you, me, and the rest of The We.**
 
 Open source and always free. Help us build the best directory of developer tools and tips!
