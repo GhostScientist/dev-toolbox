@@ -1,0 +1,17 @@
+{
+  "id": "hoppscotch",
+  "name": "Hoppscotch",
+  "website": "https://hoppscotch.io",
+  "category": "Backend",
+  "tags": ["api", "rest", "graphql", "websocket", "testing", "development", "postman-alternative"],
+  "summary": "Open source API development ecosystem with beautiful UI for testing REST, GraphQL, WebSocket, and more",
+  "why": "Hoppscotch provides a lightweight, fast, and privacy-focused alternative to traditional API clients. Works offline, supports real-time collaboration, and offers a cleaner interface than competitors.",
+  "pricing": "Open Source",
+  "getting_started": "Visit hoppscotch.io to use the web app instantly, or run locally with `npx @hoppscotch/cli serve` for offline usage. Import collections from Postman or start testing APIs immediately.",
+  "added_by": {
+    "name": "fezzigit",
+    "date": "2025-08-21"
+  },
+  "github": "https://github.com/hoppscotch/hoppscotch",
+  "docs": "https://docs.hoppscotch.io"
+}
