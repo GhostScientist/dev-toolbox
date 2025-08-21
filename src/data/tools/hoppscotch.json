@@ -9,7 +9,7 @@
   "pricing": "Open Source",
   "getting_started": "Visit hoppscotch.io to use the web app instantly, or run locally with `npx @hoppscotch/cli serve` for offline usage. Import collections from Postman or start testing APIs immediately.",
   "added_by": {
-    "name": "dev-toolbox",
+    "name": "fezzigit",
     "date": "2025-08-21"
   },
   "github": "https://github.com/hoppscotch/hoppscotch",
