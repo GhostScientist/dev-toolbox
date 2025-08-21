@@ -4,7 +4,7 @@ export const toolSchema = z.object({
   id: z.string().regex(/^[a-z0-9-]+$/),
   name: z.string(),
   website: z.string().url(),
-  category: z.enum(['AI', 'Backend', 'Build', 'CLI', 'Cloud', 'Collab', 'Data', 'DevEx', 'Frontend', 'Infra', 'Mobile', 'Observability', 'Performance', 'Security', 'Testing', 'UX']),
+  category: z.enum(['AI', 'Backend', 'Build', 'CLI', 'Cloud', 'Collab', 'Data', 'DevEx', 'Frontend', 'Infra', 'Mobile', 'Observability', 'Performance', 'Security', 'Testing', 'UX', 'JavaScript Runtimes']),
   tags: z.array(z.string()).min(1),
   summary: z.string().max(200),
   why: z.string(),
@@ -21,7 +21,7 @@ export const toolSchema = z.object({
 export const tipFrontmatterSchema = z.object({
   id: z.string().regex(/^[a-z0-9-]+$/),
   title: z.string(),
-  category: z.enum(['AI', 'Backend', 'Build', 'CLI', 'Cloud', 'Collab', 'Data', 'DevEx', 'Frontend', 'Infra', 'Mobile', 'Observability', 'Performance', 'Security', 'Testing', 'UX']),
+  category: z.enum(['AI', 'Backend', 'Build', 'CLI', 'Cloud', 'Collab', 'Data', 'DevEx', 'Frontend', 'Infra', 'Mobile', 'Observability', 'Performance', 'Security', 'Testing', 'UX', 'JavaScript Runtimes']),
   tags: z.array(z.string()).min(1),
   added_by: z.object({
     name: z.string(),

@@ -19,7 +19,7 @@
     },
     "category": {
       "type": "string",
-      "enum": ["AI", "Backend", "Build", "CLI", "Cloud", "Collab", "Data", "DevEx", "Frontend", "Infra", "Mobile", "Observability", "Performance", "Security", "Testing", "UX"],
+      "enum": ["AI", "Backend", "Build", "CLI", "Cloud", "Collab", "Data", "DevEx", "Frontend", "Infra", "Mobile", "Observability", "Performance", "Security", "Testing", "UX", "JavaScript Runtimes"],
       "description": "Primary category from categories.json"
     },
     "tags": {

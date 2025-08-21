@@ -1,0 +1,17 @@
+{
+  "id": "bun",
+  "name": "Bun",
+  "website": "https://bun.sh",
+  "category": "JavaScript Runtimes",
+  "tags": ["javascript", "typescript", "runtime", "bundler"],
+  "summary": "A fast all-in-one JavaScript runtime",
+  "why": "Faster alternative to Node.js with built-in bundler, test runner, and package manager.",
+  "pricing": "Open Source",
+  "getting_started": "Use `bun create my-app` to scaffold a new project. Install dependencies with `bun install`. Run your app using `bun run <script>`. Check the documentation for more details on usage.",
+  "added_by": {
+    "name": "rockyroed",
+    "date": "2025-08-21"
+  },
+  "github": "https://github.com/oven-sh/bun",
+  "docs": "https://bun.sh/docs"
+}
